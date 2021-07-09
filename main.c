@@ -54,7 +54,6 @@ double gaussianDeterminant(double **matrix, int *SIZE) {
     double first, factor;
     while (size > 1) {
         if (matrix[*SIZE - size][*SIZE - size] == 0) return 0;
-        printf("%f\n", matrix[*SIZE - size][*SIZE - size]);
         first = matrix[*SIZE - size][*SIZE - size];
         for (int i = *SIZE - size + 1; i < *SIZE; ++i) {
             factor = matrix[i][*SIZE - size] / first;
@@ -64,8 +63,6 @@ double gaussianDeterminant(double **matrix, int *SIZE) {
         }
         size--;
     }
-    printf("__________\n");
-    //printMatrix(matrix, SIZE);
     return diagonalMultiplication(matrix, SIZE);
 }
 
